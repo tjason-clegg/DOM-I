@@ -40,3 +40,106 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+const keys = Object.keys(siteContent.nav);
+keys.pop();
+
+document.querySelectorAll('nav a').forEach((nav, i) => {
+  nav.textContent = siteContent.nav[keys[i]]
+  //Task 3
+  nav.style.color = 'green'
+})
+
+//Start task 3
+
+var newItem = document.querySelector('nav')
+
+const newLinkProps = {
+  href: '#',
+  textContent: 'append',
+}
+
+const newLinkProps2 = {
+  href: '#',
+  textContent: 'prepend',
+}
+
+const appendNav = document.createElement('a')
+
+appendNav.href = newLinkProps.href
+appendNav.textContent = newLinkProps.textContent
+
+newItem.appendChild(appendNav)
+
+var prependItem = document.querySelector('nav')
+
+const prependNav = document.createElement('a')
+
+prependNav.href = newLinkProps2.href
+prependNav.textContent = newLinkProps2.textContent
+
+prependItem.prepend(prependNav)
+
+
+
+// const newLink = document.createElement('a')
+
+// newLink.href = newLinkStuff.href
+// newLink.textContent = newLinkStuff.textContent
+// newLink.classList.add(newLinkStuff.className)
+
+// nav.appendChild(newLink)
+
+//End task 3
+const headerimage = document.getElementById('cta-img')
+headerimage.setAttribute('src', siteContent['cta']['img-src'])
+
+
+var h1 = document.querySelector('h1')
+h1.textContent = siteContent.cta['h1']
+
+
+var button = document.querySelector('button')
+button.textContent = siteContent.cta["button"]
+
+
+const mainKeys = Object.keys(siteContent["main-content"])
+
+var textCon = document.querySelectorAll('.text-content')
+textCon[0].firstElementChild.textContent = siteContent['main-content']['features-h4'] 
+textCon[0].firstElementChild.nextSibling.textContent = siteContent['main-content']['features-content']
+
+textCon[1].firstElementChild.textContent = siteContent['main-content']['about-h4'] 
+textCon[1].firstElementChild.nextSibling.textContent = siteContent['main-content']['about-content']
+
+textCon[2].firstElementChild.textContent = siteContent['main-content']['services-h4'] 
+textCon[2].firstElementChild.nextSibling.textContent = siteContent['main-content']['services-content']
+
+textCon[3].firstElementChild.textContent = siteContent['main-content']['product-h4'] 
+textCon[3].firstElementChild.nextSibling.textContent = siteContent['main-content']['product-content']
+
+textCon[4].firstElementChild.textContent = siteContent['main-content']['vision-h4'] 
+textCon[4].firstElementChild.nextSibling.textContent = siteContent['main-content']['vision-content']
+
+var midImg = document.getElementById('middle-img')
+midImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
+
+const newKeys = Object.keys(siteContent.contact);
+
+var conCon = document.querySelector('.contact').children
+// const conArray = Array.from(conCon)
+// conCon.firstElementChild.textContent = siteContent['contact']['contact-h4']
+
+// conCon.nextSibling.textContent = siteContent['contact']['address']
+
+const newCon = Array.from(conCon)
+
+
+
+newCon.forEach((contact,idx) => {
+  contact.textContent = siteContent.contact[newKeys[idx]]
+}) 
+
+document.querySelector('footer').firstElementChild.textContent = siteContent['footer']['copyright']
+
